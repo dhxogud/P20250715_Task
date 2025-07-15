@@ -29,10 +29,10 @@ public:
 	TObjectPtr<UButton> LoginButtton;
 
 	UPROPERTY(meta = (WidgetBinding), VisibleAnywhere, Category = "Components", BlueprintReadOnly)
-	TObjectPtr<UButton> SignUpButtton;
+	TObjectPtr<UButton> SignupButtton;
 
 	UFUNCTION()
-	void OnClickSignUpButtton();
+	void OnClickSignupButtton();
 
 	UFUNCTION()
 	void OnClickLoginButton();

@@ -13,12 +13,12 @@ void UTitleHUDWidget::NativeConstruct()
 
 	UserIdText = Cast< UEditableTextBox>(GetWidgetFromName("IdInputBox"));
 	UserPasswordText = Cast< UEditableTextBox>(GetWidgetFromName("PasswordInputBox"));
-	SignUpButtton = Cast<UButton>(GetWidgetFromName("Signup_Button"));
+	SignupButtton = Cast<UButton>(GetWidgetFromName("Signup_Button"));
 	LoginButtton = Cast<UButton>(GetWidgetFromName("Login_Button"));
 
-	if (SignUpButtton)
+	if (SignupButtton)
 	{
-		SignUpButtton->OnClicked.AddDynamic(this, &UTitleHUDWidget::OnClickLoginButton);
+		SignupButtton->OnClicked.AddDynamic(this, &UTitleHUDWidget::OnClickLoginButton);
 	}
 
 	if (LoginButtton)
@@ -27,12 +27,12 @@ void UTitleHUDWidget::NativeConstruct()
 	}
 }
 
-void UTitleHUDWidget::OnClickSignUpButtton()
+void UTitleHUDWidget::OnClickSignupButtton()
 {
 	ATitlePC* PC = Cast< ATitlePC>(GetOwningPlayer());
 	if (PC)
 	{
-
+		PC->Signup();
 	}
 }
 
@@ -41,7 +41,7 @@ void UTitleHUDWidget::OnClickLoginButton()
 	ATitlePC* PC = Cast< ATitlePC>(GetOwningPlayer());
 	if (PC)
 	{
-
+		PC->Login(UserIdText->GetText(), UserPasswordText->GetText());
 	}
 }
 

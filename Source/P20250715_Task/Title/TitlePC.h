@@ -13,5 +13,7 @@ UCLASS()
 class P20250715_TASK_API ATitlePC : public APlayerController
 {
 	GENERATED_BODY()
-	
+public:
+	void Signup();
+	void Login(FText InUserIdText, FText InUserPasswordText);
 };
